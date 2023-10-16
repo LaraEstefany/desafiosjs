@@ -16,7 +16,7 @@ function numerosPares(num) {
         if (numero % 2 == 0) listaNova.push(numero);
     }
 
-    console.log(listaNova);
+    return listaNova;
 }
 
 /* 2. Print a table containing multiplication tables */
@@ -29,7 +29,7 @@ function tabuada(num) {
         listaNova.push(frase);
     }
 
-    console.log(listaNova);
+    return listaNova;
 }
 
 /* 
@@ -38,7 +38,7 @@ function tabuada(num) {
 
 function conversorKm(km) {
     const conta = km / 1.609;
-    console.log(`${km} km são ${conta.toFixed(4)} milhas.`);
+    return `${km} km são ${conta.toFixed(4)} milhas.`;
 }
 
 /*
@@ -58,18 +58,18 @@ function soma(numeroInicial, numeroFinal) {
     const valorInicial = 0;
     const total = listaNumeros.reduce((acumulador, valorAtual) => acumulador + valorAtual, valorInicial);
 
-    console.log(total);
+    return total;
 }
 
 /* 5. Create a function that reverses an array */
 
-const reverte = lista => console.log(lista.reverse());
+const reverte = lista => lista.reverse();
 
 /* 6. Sort an array from lowest to highest */
 
 function compara(lista) {
     lista.sort((a, b) => a - b);
-    console.log(lista);
+    return lista;
 }
 
 /* 7. Create a function that filters out negative numbers */
@@ -79,16 +79,16 @@ function retiraNegativos(lista) {
     for (const numero of lista) {
         if (numero >= 0) listaNova.push(numero);
     }
-    console.log(listaNova);
+    return listaNova;
 }
 
 /* 8. Remove the spaces found in a string */
 
-const removeEspaço = frase => console.log(frase.split(' ').join(''));
+const removeEspaço = frase => frase.split(' ').join('');
 
 /* 9. Return a Boolean if a number is divisible by 10 */
 
-const divisivelPorDez = num => console.log(num % 10 == 0);
+const divisivelPorDez = num => num % 10 == 0;
 
 /*
 10. Return the number of vowels in a string
@@ -116,16 +116,16 @@ function contaVogais(frase) {
     for (const vogal of vogais) {
         total = total + contaLetras(frase, vogal);
     }
-    console.log(total);
+    return total;
 }
 
-numerosPares(10);
-tabuada(7);
-conversorKm(1);
-soma(10, 200);
-reverte(listaNumeros);
-compara(listaNumerosDois);
-retiraNegativos(listaNumerosDois);
-removeEspaço(frase);
-divisivelPorDez(5);
-contaVogais(frase);
+console.log(numerosPares(10));
+console.log(tabuada(7));
+console.log(conversorKm(1));
+console.log(soma(10, 200));
+console.log(reverte(listaNumeros));
+console.log(compara(listaNumerosDois));
+console.log(retiraNegativos(listaNumerosDois));
+console.log(removeEspaço(frase));
+console.log(divisivelPorDez(5));
+console.log(contaVogais(frase));
