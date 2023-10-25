@@ -36,8 +36,10 @@ function tabuada(multiplicador) {
 3. Create a length converter function that convert from kilometers to miles. The function should include the input in kilometers and return the answer in miles.
 */
 
+const convensaoMatematicaKmParaMilhas = 1.609;
+
 function conversorKmParaMilhas(km) {
-    const milhas = km / 1.609;
+    const milhas = km / convensaoMatematicaKmParaMilhas;
     return `${km} km são ${milhas.toFixed(4)} milhas.`;
 }
 
@@ -76,15 +78,18 @@ function retornaArrayEmOrdemCrescente(lista) {
 
 function filtraNumerosNegativosDeArray(lista) {
     const listaNova = []
-    for (const numero of lista) {
-        if (numero >= 0) listaNova.push(numero);
-    }
+
+    lista.forEach(e => {
+        if (e >= 0) listaNova.push(e);
+    });
+
     return listaNova;
 }
 
 /* 8. Remove the spaces found in a string */
 
-const removeEspacosDeStrings = frase => frase.split(' ').join('');
+const regexPatternParaEspacos = /\s/g
+const removeEspacosDeStrings = frase => frase.replace(regexPatternParaEspacos, "");
 
 /* 9. Return a Boolean if a number is divisible by 10 */
 
@@ -116,6 +121,7 @@ function contaQuantasVogaisTemAString(frase) {
     for (const vogal of vogais) {
         total = total + contaLetrasDeString(frase, vogal);
     }
+    if (total == 0) total = 'A frase não possui vogais';
     return total;
 }
 
